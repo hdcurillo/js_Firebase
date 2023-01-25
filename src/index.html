@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- archivo css -->
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="./main.js" type="module"></script>
+</head>
+
+<body>
+
+    <!-- Navegacion -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">FireApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link logged-out" href="#" data-bs-toggle="modal"
+                        data-bs-target="#signInModal">SignIn</a>
+                    <a class="nav-link logged-out" href="#" data-bs-toggle="modal"
+                        data-bs-target="#signUpModal">SingUp</a>
+                    <a class="nav-link logged-in" href="#" id="logout">LogOut</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--  -->
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group posts"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SignIn Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">SignIn</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- todo: formulario de logeo -->
+                    <form id="login-form">
+                        <label for="email">Email:</label>
+                        <input type="email" id="login-email" class="form-control mb-3" placeholder="Email" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" id="login-password" class="form-control mb-3" placeholder="******"
+                            required>
+
+                        <button type="submit" class="btn btn-primary w-100 mb-4">Login</button>
+                    </form>
+
+                    <button type="button" id="googleLogin" class="btn btn-info">Google</button>
+                    <button type="button" id="fbLogin" class="btn btn-secondary">Facebook</button>
+                    <button type="button" id="githubLogin" class="btn btn-light">GitHub</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SignUp Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">SignUp</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- todo: formulario de registro -->
+                    <form id="signup-form">
+                        <label for="email">Email:</label>
+                        <input type="email" id="signup-email" class="form-control mb-3" placeholder="Email" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" id="signup-password" class="form-control mb-3" placeholder="******"
+                            required>
+
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>
